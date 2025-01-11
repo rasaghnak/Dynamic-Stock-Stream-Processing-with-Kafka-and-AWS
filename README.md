@@ -220,4 +220,4 @@ The architecture of this project is designed to ensure scalability, fault-tolera
    - Use SQL queries to analyze the data in S3.
 
 
-
+Sources: Reference - @Darshil parmer
