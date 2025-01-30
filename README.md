@@ -1,4 +1,4 @@
-# Stock-Market-Real-Time-Data-Analysis
+# Dynamic Stock Stream Processing with Kafka and AWS
 
 Real-time data processing is the backbone of modern data-driven businesses. **Stock-Market-Real-Time-Data-Analysis** is a full-stack, scalable pipeline that simulates real-world stock market scenarios by generating, processing, storing, and analyzing real-time stock data. This project combines cutting-edge technologies like **Apache Kafka**, **Amazon S3**, **AWS Glue**, and **Amazon Athena** to deliver an end-to-end data streaming and analytics platform.
 
