@@ -14,11 +14,8 @@ Dynamic Stock Stream Processing with Kafka and AWS, is a scalable pipeline that 
 - Errors that I faced duirng the project
 - [Step-by-Step Workflow](#step-by-step-workflow)
 - [Use Cases](#use-cases)
-- [Future Scope](#future-scope)
 - [Why This Project?](#why-this-project)
 - [How to Run the Project](#how-to-run-the-project)
-- [Contact Me](#contact-me)
-- [License](#license)
 
 ---
 
@@ -174,21 +171,6 @@ A picture reference of the architecture
   - Demonstrate scalability with increasing data streams.
 
 ---
-
-## 🔮 Future Scope
-
-- **Dashboard Integration**:
-  - Build visualizations using Amazon QuickSight or Tableau.
-  
-- **AI Integration**:
-  - Incorporate machine learning models for stock predictions.
-
-- **Multi-Region Availability**:
-  - Deploy across multiple AWS regions for enhanced fault tolerance.
-
-- **Enhanced Security**:
-  - Add Kafka ACLs and AWS-specific security practices like encryption.
-
 
 ## ▶ How to Run the Project
 
