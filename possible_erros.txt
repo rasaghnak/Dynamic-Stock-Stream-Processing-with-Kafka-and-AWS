@@ -1,0 +1,5 @@
+So while working on the project, I documented few errors I came across
+1. Not using the EC2 instance IP address
+2. Uisng different topic name for the producer and consumer code
+3. For kafka version 2.2.1 which is not the latest version use "broker-list" for starting the producer channel 
+4. In s3 bucket while querying we might save the data in a sub folder and run the crawler on the main file so check for the path while running the crawler on s3 bucket 
