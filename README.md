@@ -1,6 +1,6 @@
 # Dynamic Stock Stream Processing with Kafka and AWS
 
-Real-time data processing is the backbone of modern data-driven businesses. **Stock-Market-Real-Time-Data-Analysis** is a full-stack, scalable pipeline that simulates real-world stock market scenarios by generating, processing, storing, and analyzing real-time stock data. This project combines cutting-edge technologies like **Apache Kafka**, **Amazon S3**, **AWS Glue**, and **Amazon Athena** to deliver an end-to-end data streaming and analytics platform.
+Dynamic Stock Stream Processing with Kafka and AWS, is a scalable pipeline that simulates real-world stock market scenarios by generating, processing, storing, and analyzing real-time stock data. This project combines cutting-edge technologies like **Apache Kafka**, **Amazon S3**, **AWS Glue**, and **Amazon Athena** to deliver an end-to-end data streaming and analytics platform.
 
 ---
 
@@ -10,7 +10,8 @@ Real-time data processing is the backbone of modern data-driven businesses. **St
 - [Architecture](#architecture)
 - [Features](#features)
 - [Core Technologies](#core-technologies)
-- [Setup and Installation](#setup-and-installation)
+- [Setup and Installation](#setup-and-installation) refer to the documentation for more details
+- Errors that I faced duirng the project
 - [Step-by-Step Workflow](#step-by-step-workflow)
 - [Use Cases](#use-cases)
 - [Future Scope](#future-scope)
@@ -23,18 +24,11 @@ Real-time data processing is the backbone of modern data-driven businesses. **St
 
 ## 🔍 About the Project
 
-The goal of this project is to showcase the **real-time data processing pipeline** for **stock market simulation and analysis**. The pipeline can handle large volumes of data efficiently and demonstrates the practical application of big data technologies and cloud computing.
-
-### Key Objectives:
-- Build a **reliable real-time streaming system** using Kafka.
-- Store the streamed data securely on **Amazon S3**.
-- Automate metadata extraction and organization with **AWS Glue**.
-- Enable fast querying and analytics with **Amazon Athena**.
-- Simulate a real-world environment for processing and analyzing stock data.
+The goal of this project is to simulate the **real-time data processing pipeline** for **stock market simulation and analysis**. The pipeline can handle large volumes of data efficiently and demonstrates the practical application of big data technologies and cloud computing.
 
 ### Why This Project?
 
-This project is ideal for demonstrating skills in:
+This project is ideal for building understanding in:
 - **Big Data Technologies**: Working with large-scale data in real-time.
 - **Cloud Computing**: Leveraging AWS services for modern data solutions.
 - **Software Architecture**: Designing and implementing scalable data pipelines.
@@ -43,8 +37,7 @@ This project is ideal for demonstrating skills in:
 ---
 
 ## 🏗 Architecture
-
-The architecture of this project is designed to ensure scalability, fault-tolerance, and efficiency:
+A picture reference of the architecture
 
 <img width="950" alt="Screenshot 2025-01-11 at 11 38 30 PM" src="https://github.com/user-attachments/assets/af0a3035-8dac-4a42-95e9-0919be33ec06" />
 ![Architecture Diagram](Architecture.jpg)
@@ -54,11 +47,11 @@ The architecture of this project is designed to ensure scalability, fault-tolera
 1. **Producer**:
    - Simulates stock market data from a CSV dataset.
    - Streams data to Kafka using Python.
-   - Integrates with AWS services via the `boto3` SDK.
 
 2. **Apache Kafka**:
    - Acts as the backbone of real-time data streaming.
    - Deployed on **AWS EC2** for high availability.
+   - Used zoo keeper to monitor the data storage
 
 3. **Consumer**:
    - Listens to Kafka topics.
@@ -107,9 +100,10 @@ The architecture of this project is designed to ensure scalability, fault-tolera
   - Amazon S3
   - AWS Glue
   - Amazon Athena
+  - Glue crawler
 - **Deployment**: AWS EC2
-- **Data Formats**: CSV, Parquet
-- **SDKs**: `boto3`, `kafka-python`
+- **Data Formats**: CSV, JSON
+- **SDKs**: `kafka-python`
 
 ---
 
@@ -125,22 +119,23 @@ The architecture of this project is designed to ensure scalability, fault-tolera
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/Stock-Market-Real-Time-Data-Analysis.git
+   git clone https://github.com/rkuturu/Dynamic-Stock-Stream-Processing-with-Kafka-and-AWS.git
    cd Stock-Market-Real-Time-Data-Analysis
    ```
 
 2. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+   python
+   python-kafka
+   tools:
+   jupyter notebook or visual code
 
-3. **Set up AWS credentials**:
-   - Configure  AWS access and secret keys in `~/.aws/credentials`.
+4. **Set up AWS credentials**:
+   - Configure  AWS access and secret keys in `~/.aws/credentials`. Connect to AWS user through CLI using these creds
 
-4. **Update configurations**:
-   - Modify the `config.py` file with  Kafka broker addresses, S3 bucket name, and other parameters.
+5. **Update configurations**:
+   - Modify the ip address with  Kafka broker addresses, S3 bucket name, and other parameters.
 
-5. **Deploy Kafka**:
+6. **Deploy Kafka**:
    - Install and configure Kafka on EC2 instance following [this guide](https://kafka.apache.org/quickstart).
 
 ---
@@ -158,8 +153,11 @@ The architecture of this project is designed to ensure scalability, fault-tolera
 
 4. **AWS Glue**:
    - Crawls the S3 bucket to extract and catalog metadata.
+  
+5. **AWS Crawler**
+   - Set the crawler to correct creds with appropriate role and location.
 
-5. **Athena**:
+6. **Athena**:
    - Enables querying and analytics of stock market data.
 
 ---
@@ -202,16 +200,10 @@ The architecture of this project is designed to ensure scalability, fault-tolera
      ```
 
 2. **Run the Producer**:
-   - Simulate and stream stock data:
-     ```bash
-     python producer.py
-     ```
+   - we can run on our jupyter notebook or the VS code 
 
 3. **Run the Consumer**:
-   - Consume data from Kafka and upload it to S3:
-     ```bash
-     python consumer.py
-     ```
+     - we can run on our jupyter notebook or the VS code 
 
 4. **Run AWS Glue Crawler**:
    - Create and start a crawler to catalog the data.
