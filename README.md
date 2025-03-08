@@ -194,4 +194,4 @@ A picture reference of the architecture
    - Use SQL queries to analyze the data in S3.
 
 
-Sources: Reference - @Darshil parmer
+Sources: Reference - @Darshil parmer @Siddartha_Koppaka
